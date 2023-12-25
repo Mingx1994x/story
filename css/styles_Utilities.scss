@@ -1,0 +1,153 @@
+// 網頁主要設定
+@mixin flexbox($dir: row, $justifyContent: center, $alignItem: center) {
+    display: flex;
+    flex-direction: $dir ;
+    justify-content: $justifyContent;
+    align-items: $alignItem;
+}
+
+
+body.seablue {
+    background: var(--dsbgcolor3);
+}
+
+body.seablue2 {
+    background: var(--dsbgcolor4);
+}
+
+body {
+    nav {
+        div.container-fluid {
+            div.collapse {
+                ul.navbar-nav {
+                    li.dropdown {
+                        a.myactive {
+                            color: var(--dscolor6_3);
+                        }
+
+                        a.myactive:hover {
+                            color: var(--dscolor5_1);
+                        }
+
+                        a.loginactive {
+                            color: var(--dscolor5_2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //portfolio.html
+    .indBanner {
+        min-height: 50vh;
+        width: 100%;
+        background: url(../img/banner1.png);
+        background-position: center center;
+        background-size: cover;
+        position: relative;
+        z-index: 0;
+    }
+
+    //portfolio.html
+    .pfBanner {
+        min-height: 50vh;
+        width: 100%;
+        background: url(../img/banner3.png);
+        background-position: center center;
+        background-size: cover;
+        position: relative;
+        z-index: 0;
+    }
+
+    // .container {
+        // .row {
+            // .coverflow {
+            //     width: 100vw;
+            //     height: 40vh;
+            //     position: relative;
+
+            //     a {
+            //         position: absolute;
+            //         display: block;
+            //         width: 30vw;
+            //         height: 30vh;
+            //         top: 0;
+            //         left: 50%;
+            //         opacity: 0;
+            //         transform: translateX(-50%);
+            //         animation: slider 15s linear infinite;
+
+            //         img {
+            //             max-width: 100%;
+            //         }
+            //     }
+
+            //     a:nth-child(4) {
+            //         animation-delay: 10s;
+            //     }
+
+            // }
+        // }
+    // }
+
+
+    footer {
+        @include flexbox(column);
+        background-color: var(--dsbgcolor3);
+        min-height: 20vh;
+
+        .logo {
+            @include flexbox();
+
+            img {
+                width: 5vw;
+                height: 5vw;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+                margin-left: 10px;
+            }
+        }
+
+        .links {
+            width: 40%;
+            @include flexbox($justifyContent: space-around);
+
+            a {
+                width: 5vw;
+                height: 5vw;
+                border-radius: 50%;
+                overflow: hidden;
+                padding: 5px;
+
+                img {
+                    width: 3vw;
+                    height: 3vw;
+                    transition: all 0.5s;
+
+                    &:hover {
+                        transform: scale(1.2);
+                    }
+
+                }
+            }
+
+        }
+    }
+}
+
+// @keyframes slider {
+//     3% {
+//         opacity: 1;
+//     }
+
+//     27% {
+//         opacity: 1;
+//     }
+
+//     30% {
+//         opacity: 0;
+//     }
+// }
